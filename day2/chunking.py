@@ -37,9 +37,9 @@ def chunk_recursive(text, size=300, overlap=50):
 
 def compare_strategies(text):
     strategies = {
-        'Fixed-Size  ': chunk_fixed(text),
-        'Sentence    ': chunk_sentences(text),
-        'Recursive   ': chunk_recursive(text),
+        'Fixed-Size  ': chunk_fixed(text, overlap=0),
+        'Sentence    ': chunk_sentences(text, sentences_per_chunk=1),
+        'Recursive   ': chunk_recursive(text, size=100),
     }
 
     print('\n' + '=' * 55)
